@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+<head>
+  <link rel="stylesheet" href="/styles/writePost.css" />
+</head>
+<% if (locals.postSuccess && locals.postSuccess == true) { %>
+<div class="alert-success">✅ Post added successfully!</div>
+<% } %>
+
+<form action="/submit" method="post" enctype="multipart/form-data">
+  <label for="uploadFile">Upload</label>
+  <input type="file" name="uploadFile" accept="image/*" required />
+  <label for="category">category</label>
+  <input type="text" name="category" required />
+  <label for="title">Title</label>
+  <input type="text" name="title" required />
+
+  <label for="content">Content</label>
+  <textarea name="content" required></textarea>
+  <label for="writer">Writer</label>
+  <input type="text" name="writer" required />
+  <input type="submit" value="PUBLISH" />
+</form>
+
+<script>
+  var header = $("#header");
+  var anchorTags = $("#header > a");
+  console.log(anchorTags);
+  $(anchorTags[0]).addClass("active");
+</script>
+<%- include("partials/footer.ejs") %>

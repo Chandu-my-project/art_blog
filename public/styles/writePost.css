@@ -1,0 +1,186 @@
+/* General Page Styling */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f2e7;
+  margin: 0;
+  padding: 0;
+  color: #1a1a1a;
+}
+
+/* Form Container */
+form {
+  max-width: 500px;
+  margin: 40px auto;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  border: 1px solid #d6d6d6;
+  background: rgba(22, 33, 68, 0.04);
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* Labels */
+form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Inputs and Textarea */
+form input[type="text"],
+form input[type="file"],
+form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ddd;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Textarea Specific */
+form textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Submit Button */
+form input[type="submit"] {
+  margin: 10px 0;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  background-color: #0f0f0f;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  /* height: 45px;
+  line-height: 45px; */
+}
+
+/* Submit Hover */
+form input[type="submit"]:hover {
+  background-color: #555454;
+}
+
+/* Remove default input outlines/shadows */
+form input,
+form textarea {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Reset for better consistency */
+form input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+form input[type="file"]::before {
+  content: "Choose File";
+  display: inline-block;
+  background: #333;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+form input[type="file"]:hover::before {
+  background: #111;
+}
+.alert-success {
+  position: fixed; /* floats above content */
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  animation: fadeOut 0.5s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: none;
+  }
+}
+
+@media (max-width: 767px) {
+  form {
+    max-width: 100%;
+    width: 95%;
+    padding: 1.2rem 1rem;
+    margin: 1.5rem auto;
+    gap: 0.8rem;
+    border-radius: 8px;
+  }
+
+  form label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  form input[type="text"],
+  form input[type="file"],
+  form textarea {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+    border-radius: 6px;
+  }
+
+  form textarea {
+    height: 90px;
+  }
+
+  form input[type="submit"] {
+    padding: 0.6rem 1rem;
+    font-size: 0.88rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  form input[type="file"]::before {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+  }
+
+  .alert-success {
+    top: 100px;
+    font-size: 0.88rem;
+    padding: 8px 16px;
+    text-align: center;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 500px) {
+  form {
+    padding: 1rem 0.8rem;
+    gap: 0.7rem;
+  }
+
+  form input[type="submit"] {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  form input[type="file"]::before {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.9rem;
+  }
+}
